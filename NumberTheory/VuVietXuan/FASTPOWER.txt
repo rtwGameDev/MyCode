@@ -1,0 +1,5 @@
+Bài toán A ^ B % C sử dụng chia để trị tính A^B (divide and conquer), với mỗi A^x % C, A^x * A^x = A^n, khi mod bằng nhau 
+-> A^x %C + A^x %C = A^n %C
+
+[link to submit](http://csloj.ddns.net/problem/405) - thay vì %C thì %1e9+7;
+[link tham khảo](https://vnoi.info/wiki/translate/he/Number-Theory-3.md) 

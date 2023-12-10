@@ -1,0 +1,52 @@
+Đề bài:
+Đếm số cách cho marmot ăn, marmot chỉ ăn 1 trong 2 loại hoa là hoa trắng hoặc hoa đỏ, với hoa đỏ thì ko có điều kiện gì, với hoa trắng thì marmot chỉ ăn khi cho nó 1 dãy liên tiếp k bông hoa trắng, ví dụ với k = 2, và len = 3 thì nó chỉ ăn "RWW" hoặc "WWR" chứ không ăn "WRW" ( ví dụ với hoa trắng)
+cho t testcase và số k
+mỗi testcase chứ a và b tượng trưng cho lượng độ dài mà marmot ăn, tính tổng số cách cho marmot ăn từ độ dài a đến b có mod cho 10^9 + 7
+
+
+
+
+
+
+
+[LinkToSubmit](https://codeforces.com/problemset/problem/474/D)
+[Tags] Dp
+[Hint] cho mảng f với f.0 = 1, f.i tượng trưng cho số cách cho marmot ăn với độ dài i, f.i dựa trên f.(i-1) với cách cho ăn hoa đỏ f.i = f.(i-1), hoa trắng thì nếu xét i >= k f.i = f.i + (f.(i-k))
+[Lưu ý] với mỗi kết quả cho ra nếu mod rồi dùng trừ(mảng cộng dồn) thì số có thể âm, với số âm ta cộng thêm 10^9 + 7
+
+
+
+
+
+
+[code]:
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 1e5;
+const int M = 1e9+7;
+typedef long long ll;
+int t,k;
+ll f[N+10] = {0}, res[N+10] = {0};
+void Setup(){
+    f[0] = 1;
+    for(int i = 1; i<=N; i++){
+        f[i] = f[i-1];
+        if(i >= k) f[i] = (f[i] + f[i-k])%M;
+    }
+    for(int i = 1; i<=N; i++){
+        res[i] = (res[i-1]+f[i])%M;
+    }
+    f[0] = 0;
+}
+int main(){
+    cin>>t>>k;
+    Setup();
+    while(t--){
+        int a,b; cin>>a>>b;
+        ll RES = res[b] - res[a-1];
+        if(RES < 0) RES += M;
+        cout<<RES<<endl;
+    }
+    return 0;
+}
+ 
