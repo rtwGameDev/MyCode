@@ -22,9 +22,8 @@ struct dateTime {
 	~dateTime() {}
 };
 
-// chuyen doi thoi gian ve chuoi de hien thi
-// Tai sao thoi gian lai su dung string => khi convert qua cac chuan dinh dang thoi gian, vi du nhu 01/01/2023 thi dang int se ko lam dc (1/1/...)
-
+ //chuyen doi thoi gian ve chuoi de hien thi
+ //Tai sao thoi gian lai su dung string => khi convert qua cac chuan dinh dang thoi gian, vi du nhu 01/01/2023 thi dang int se ko lam dc (1/1/...)
 string getStringDATE_TIME(dateTime date_time) {
 	string time_to_string = "";
 	time_to_string = time_to_string + date_time.day + "/"
@@ -194,6 +193,7 @@ bool past_future(dateTime date_time) {
 	if (checkDATE(date_time) == false && checkTIME(date_time) == false) return false;
 	// tgian da dung dinh dang
 	dateTime now = getCurrentTime();
+
 	int hour_now =   String_to_Number(now.hour);
 	int minute_now =   String_to_Number(now.minute);
 	int day_now =   String_to_Number(now.day);
