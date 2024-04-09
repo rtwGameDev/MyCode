@@ -1,0 +1,17 @@
+export global CONST_FUNCTION_GLOBAL {
+    // kich thuoc khung hinh
+    out property <physical-length> MAX_WIDTH : 1890phx;
+    out property <physical-length> MAX_HEIGHT: 930phx;
+
+    // khoi xu ky canh bao
+    in-out property <bool> show_warning : false;
+    in-out property <string> message_warning : "ALO";
+    callback SHOW_WARNING_ERORR(string);
+    SHOW_WARNING_ERORR(str) => {
+        message_warning = str;
+        show_warning = true;
+    }
+
+    // Chi so trang giao dien dang dc show
+    in-out property <int> page_number_SHOW : 0;
+}

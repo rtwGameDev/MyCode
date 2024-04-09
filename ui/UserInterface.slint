@@ -1,0 +1,32 @@
+import { CONST_FUNCTION_GLOBAL } from "const_function.slint";
+import { NAVBAR } from "navbar.slint";
+import { VerticalBox, Button } from "std-widgets.slint";
+import { LogWarning-error } from "Warning_erorr.slint";
+import { HanhKhach } from "HanhKhach.slint";
+
+export component app inherits Window {
+    width: CONST-FUNCTION-GLOBAL.MAX_WIDTH;
+    height: CONST-FUNCTION-GLOBAL.MAX_HEIGHT;
+    background: #FDF5E6;
+    warning := LogWarning-error {
+        x: 0;
+        y: 0;
+        z: 2;
+        visible: CONST-FUNCTION-GLOBAL.show_warning;
+    }
+    HorizontalLayout {
+        alignment: center;
+        VerticalLayout {
+            alignment: start;
+            navbar := NAVBAR {z: 1;}
+            Rectangle {
+                width: CONST-FUNCTION-GLOBAL.MAX_WIDTH;
+                preferred-height: CONST-FUNCTION-GLOBAL.MAX_HEIGHT * 0.92;
+                HanhKhach {
+                    width: parent.width;
+                    height: parent.height;
+                }
+            }
+        }
+    }
+}

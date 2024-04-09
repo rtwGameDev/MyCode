@@ -1,0 +1,65 @@
+import { CONST_FUNCTION_GLOBAL } from "const_function.slint";
+import { Button } from "std-widgets.slint";
+export component LogWarning_error inherits Rectangle {
+
+    // set kich thuoc
+    width: CONST-FUNCTION-GLOBAL.MAX_WIDTH;
+    height: CONST-FUNCTION-GLOBAL.MAX_HEIGHT;
+    background: rgba(0,0,0,0.5);
+
+    // Vung phu mo, ngan chan hanh vi click
+    TouchArea {}
+
+    // cai khoi log canh bao
+    containerLog := Rectangle {
+        width: 450phx;
+        height: 200phx;
+        border-color: black;
+        border-width: 10phx;
+        background: white;
+        drop-shadow-blur: 18phx;
+        drop-shadow-color: black;
+
+        // chua thanh canh bao
+        label := Rectangle {
+            width: containerLog.width;
+            height: 40phx;
+            background: blue;
+            Text {text: "WARNING"; color: red; font-weight: 700;font-size: 16phx;}
+            x: 0;
+            y: 0;
+        }
+
+        // chua noi dung canh bao
+        Message := Rectangle {
+            x: parent.width / 2 - self.width / 2;
+            y: parent.height/ 2 - self.height / 2;
+            width: 400phx;
+            height: 100phx;
+            text_message := Text {text: CONST-FUNCTION-GLOBAL.message_warning; font-size: 20phx; color: black;}
+        }
+
+        // nut xac nhan
+        confirm := Rectangle {
+            x: parent.width / 2 - self.width / 2;
+            y: parent.height - self.height * 1.6;
+            border-radius: 12px;
+            text_confirm := Text {text: "XAC NHAN !!!";font-size: 12phx;font-weight: 700;color: yellow;} 
+            width: 100px;
+            height: 40px;
+            background: #dc134c;
+            confirmArea := TouchArea {
+                clicked => {
+                    CONST-FUNCTION-GLOBAL.show_warning = false;
+                }
+            }
+            
+            states [
+                clicked_confirm when confirmArea.pressed : {
+                    confirm.background : #999999;
+                    text_confirm.color : #000;
+                }
+            ]
+        }
+    }
+}

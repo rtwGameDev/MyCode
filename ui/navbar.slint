@@ -1,0 +1,44 @@
+import { CONST_FUNCTION_GLOBAL } from "const_function.slint";
+export component NAVBAR inherits Rectangle {
+    width: CONST-FUNCTION-GLOBAL.MAX_WIDTH;
+    height: CONST-FUNCTION-GLOBAL.MAX_HEIGHT * 0.08;
+    background: #FDF5E6;
+    drop-shadow-blur: 5phx;
+    drop-shadow-color: gray;
+    HorizontalLayout {
+        padding: 8px;
+        padding-left: 100phx;
+        padding-right: 100phx;
+        spacing: 8phx;
+        for i[index] in ["Hanh Khach", "Vé chuyen bay", "May Bay", "Chuyen bay", "Thong ke"] : a := Rectangle {
+            underline := Rectangle {
+                width: parent.width;
+                height: 4px;
+                background: black;
+                y : parent.height + 10phx;
+                visible: false;
+            }
+            border-radius: 8phx;
+            horizontal-stretch: 1;
+            background: #00BFFF;
+            text_content := Text {text: i;color: black;font-weight: 500;font-size: 24phx;}
+            AREA := TouchArea {
+                clicked => {
+                    CONST-FUNCTION-GLOBAL.page_number_SHOW = index;
+                }
+            }
+            states [
+                clickedButton when AREA.pressed : {
+                    a.background : #00FFFF;
+                }
+                Choose when index == CONST-FUNCTION-GLOBAL.page_number_SHOW : {
+                    a.border-color : #000;
+                    a.border-width: 4px;
+                    a.background: #0000FF;
+                    text_content.color : rgb(255,255,255);
+                    underline.visible : true;
+                }
+            ]
+        }
+    }
+}
