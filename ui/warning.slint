@@ -1,8 +1,5 @@
-import { CONST_FUNCTION_GLOBAL } from "const_function.slint";
-import { Button } from "std-widgets.slint";
-export component LogWarning_error inherits Rectangle {
-
-    // set kich thuoc
+import { CONST_FUNCTION_GLOBAL } from "CONST_FUNCTION.slint";
+export component LogWarning inherits Rectangle {
     width: CONST-FUNCTION-GLOBAL.MAX_WIDTH;
     height: CONST-FUNCTION-GLOBAL.MAX_HEIGHT;
     background: rgba(0,0,0,0.5);
@@ -14,9 +11,7 @@ export component LogWarning_error inherits Rectangle {
     containerLog := Rectangle {
         width: 450phx;
         height: 200phx;
-        border-color: black;
-        border-width: 10phx;
-        background: white;
+        background: wheat;
         drop-shadow-blur: 18phx;
         drop-shadow-color: black;
 
@@ -24,8 +19,8 @@ export component LogWarning_error inherits Rectangle {
         label := Rectangle {
             width: containerLog.width;
             height: 40phx;
-            background: blue;
-            Text {text: "WARNING"; color: red; font-weight: 700;font-size: 16phx;}
+            background: #00BFFF;
+            Text {text: "WARNING"; color: yellow; font-weight: 700;font-size: 16phx;}
             x: 0;
             y: 0;
         }
@@ -36,24 +31,22 @@ export component LogWarning_error inherits Rectangle {
             y: parent.height/ 2 - self.height / 2;
             width: 400phx;
             height: 100phx;
-            text_message := Text {text: CONST-FUNCTION-GLOBAL.message_warning; font-size: 20phx; color: black;}
+            text_message := Text {text: CONST-FUNCTION-GLOBAL.message_warning; font-size: 20phx; color: red;}
         }
 
         // nut xac nhan
         confirm := Rectangle {
             x: parent.width / 2 - self.width / 2;
             y: parent.height - self.height * 1.6;
-            border-radius: 12px;
-            text_confirm := Text {text: "XAC NHAN !!!";font-size: 12phx;font-weight: 700;color: yellow;} 
-            width: 100px;
-            height: 40px;
-            background: #dc134c;
+            text_confirm := Text {text: "XAC NHAN !!!";font-size: 12phx;font-weight: 700;color: black;} 
+            width: 100phx;
+            height: 40phx;
+            background: #FF7F50;
             confirmArea := TouchArea {
                 clicked => {
                     CONST-FUNCTION-GLOBAL.show_warning = false;
                 }
             }
-            
             states [
                 clicked_confirm when confirmArea.pressed : {
                     confirm.background : #999999;
