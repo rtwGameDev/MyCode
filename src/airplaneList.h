@@ -128,6 +128,5 @@ class airplaneList {
         }
 
         // Destructor
-        ~airplaneList(){};
 };
 
