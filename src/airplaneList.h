@@ -128,6 +128,8 @@ class airplaneList {
         }
 
         // Destructor
-        ~airplaneList(){};
+        ~airplaneList(){
+            cout << "TEST BRAIN";
+        };
 };
 
