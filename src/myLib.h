@@ -191,4 +191,7 @@ namespace NS_myLib {
         }
         return false;
     }
+    void ADV() {
+        cout << "ADVANCE";
+    }
 }
