@@ -193,5 +193,6 @@ namespace NS_myLib {
     }
     void ADV() {
         cout << "ADVANCE";
+        cout << "Enter" << endl;
     }
 }
