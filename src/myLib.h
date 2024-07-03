@@ -7,6 +7,7 @@ using namespace std;
 namespace NS_myLib {
     void newFunc() {
         cout << "New Function" << endl;
+        cout << "test new function" << endl;
     }
     // tu so sang chuoi
     string Number_to_String(int number) {
