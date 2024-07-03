@@ -126,10 +126,10 @@ class airplaneList {
 	        for (int i = 0; i <= this->index; i++)
 		    delete this->data[i];
         }
-
         // Destructor
         ~airplaneList(){
             cout << "TEST BRAIN hhh";
+            cout << "i llove" << endl;
         };
 };
 
