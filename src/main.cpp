@@ -1,7 +1,5 @@
-#include "homePage.h"
 #include <iostream>
 #include <string>
-#include "slint.h"
 using namespace std;
 struct dateTime {
 	string day;
