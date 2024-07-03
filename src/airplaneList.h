@@ -126,7 +126,6 @@ class airplaneList {
 	        for (int i = 0; i <= this->index; i++)
 		    delete this->data[i];
         }
-
         // Destructor
 };
 
