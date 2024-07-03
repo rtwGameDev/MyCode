@@ -5,6 +5,11 @@
 using namespace std;
 // Noi day chua cac ham doc lap voi cac thu vien
 namespace NS_myLib {
+    void newFunc() {
+        cout << "New Function" << endl;
+        cout << "AVL" << endl;
+        cout << "test new function" << endl;
+    }
     // tu so sang chuoi
     string Number_to_String(int number) {
         if (number == 0) return "0";
