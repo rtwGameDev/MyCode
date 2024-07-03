@@ -9,6 +9,7 @@ namespace NS_myLib {
         cout << "New Function" << endl;
         cout << "AVL" << endl;
         cout << "test new function" << endl;
+        cout << 1;
     }
     // tu so sang chuoi
     string Number_to_String(int number) {
