@@ -128,6 +128,8 @@ class airplaneList {
         }
 
         // Destructor
-        ~airplaneList(){};
+        ~airplaneList(){
+            cout << "i llove" << endl;
+        };
 };
 
