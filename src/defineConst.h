@@ -6,3 +6,4 @@
 
 
 #define A 0
+#define B 0
