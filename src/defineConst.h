@@ -5,3 +5,6 @@
 #define HASKD 134
 
 #define main 0
+
+#define A 0
+#define B 0
