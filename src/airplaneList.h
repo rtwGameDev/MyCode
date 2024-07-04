@@ -10,7 +10,7 @@ struct airplane {
     int rowNumber; // Số dãy
 
     int inter = 0;
-
+    int testSourceTree = 12;
     // Constructor
     airplane(){};
     airplane(std::string idPlane, std::string typePlane, int rowNumber, int colNumber) {
