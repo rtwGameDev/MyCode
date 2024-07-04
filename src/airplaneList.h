@@ -14,6 +14,8 @@ struct airplane {
     int k = 2874;
     int inter = 0;
 
+    int testSourceTree = 12;
+    int n = 253;
     // Constructor
     airplane(){};
     airplane(std::string idPlane, std::string typePlane, int rowNumber, int colNumber) {
