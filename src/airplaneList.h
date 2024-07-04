@@ -12,7 +12,6 @@ struct airplane {
     int manhduy = 2012;
     int n = 123;
     int k = 2874;
-    int n = 253;
     // Constructor
     airplane(){};
     airplane(std::string idPlane, std::string typePlane, int rowNumber, int colNumber) {
