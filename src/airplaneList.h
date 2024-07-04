@@ -7,10 +7,12 @@ struct airplane {
     std::string idPlane; // key
     std::string typePlane;
     int colNumber; // Số dòng
-    int rowNumber; // Số dãy
+    int rowNumber; // Số dãy 
 
     int manhduy = 2012;
 
+    int k = 2874;
+    
     // Constructor
     airplane(){};
     airplane(std::string idPlane, std::string typePlane, int rowNumber, int colNumber) {
