@@ -8,7 +8,7 @@ struct airplane {
     std::string typePlane;
     int colNumber; // Số dòng
     int rowNumber; // Số dãy
-
+    int k = 2874;
     // Constructor
     airplane(){};
     airplane(std::string idPlane, std::string typePlane, int rowNumber, int colNumber) {
