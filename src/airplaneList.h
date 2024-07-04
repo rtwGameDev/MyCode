@@ -10,7 +10,7 @@ struct airplane {
     int rowNumber; // Số dãy 
 
     int manhduy = 2012;
-
+    int n = 123;
     int k = 2874;
     
     // Constructor
