@@ -9,6 +9,8 @@ struct airplane {
     int colNumber; // Số dòng
     int rowNumber; // Số dãy
 
+    int manhduy = 2012;
+
     // Constructor
     airplane(){};
     airplane(std::string idPlane, std::string typePlane, int rowNumber, int colNumber) {
