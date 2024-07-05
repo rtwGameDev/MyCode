@@ -1,0 +1,8 @@
+_Ý tưởng sinh.
+Sinh cấu hình  đầu tiên.
+Sinh cấu hình cuối cùng 
+Bắt đầu từ cấu hình start sinh cấu tình tiếp theo
+vd: 0000 => 0001
+giả sử cấu hình 1 sinh ra cấu hình 2. sao cho cấu hình 2 vừa đủ lớn hơn cấu hình 1.
+
+Duyệt từ phải qua trái => gặp phần tử số 0 => đổi thành 1, các phần tử phía sau => 0.
