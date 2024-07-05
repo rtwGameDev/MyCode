@@ -1,0 +1,16 @@
+Đề bài: Tính số fibonacci thứ n
+Số fibonacci là số là tổng hai số trước nó với F(n) = F(n-1) + F(n-2)(n>=2) với nhiều tính chất đặc biệt có dùng cho đề thi HSG QG. Với bài cho F(0) = F(1) = 1;
+
+
+
+
+
+
+
+
+
+
+
+[Hint] Nhân Ma Trận với ma trận đơn vị, công thức có trong tài liệu còn chứng minh nhường cho A Khoa :v
+[Lưu Ý] Tuy có công thức công thức nhân ma trận khá dễ với cấp 2x2 nhưng nên làm bài NhanMaTran trước cho quen tay 
+[LinkToSubmit](http://csloj.ddns.net/problem/412)

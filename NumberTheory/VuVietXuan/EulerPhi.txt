@@ -1,0 +1,40 @@
+Hàn Euler(n): là các số từ 1 đến n là nguyên tố cùng nhau tức là có giá trị ước chung lớn nhất = 1;
+Đề bài: Cho t testcase, tìm giá trị Phi Euler của n; 
+
+
+
+
+
+
+
+
+
+///////////////////////////////|//////////////////////////////
+///////////////////////////////|//////////////////////////////
+///////////////////////////////v//////////////////////////////
+[Tags] Math, Number theory 
+[LinkToSubmit](https://oj.vnoi.info/problem/etf)
+[Hint] để giải quyết bài cần phải áp dụng nhiều kiến thức toán học, công thức trong bài giải.
+[Code] #include<bits/stdc++.h>
+using namespace std;
+int Get(int n){
+    int res = n;
+    for(int i = 2; i*i<=n; i++){
+        if(n%i==0){
+            while(n%i==0){
+                n /= i;
+            }
+            res -= res/i;
+        }
+    }
+    if(n>1) res-=res/n;
+    return res;
+}
+int main(){
+    int t; cin>>t;
+    while(t--){
+        int n; cin>>n;
+        cout<<Get(n)<<endl;
+    }
+    return 0;
+}

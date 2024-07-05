@@ -1,0 +1,50 @@
+Đề bài: cho n, và mảng a gồm n số a.1 .. a.n
+chọn 1 số bất kì và phải xóa những phần tử có giá trị (a.i) + 1, (a.i) - 1. Khi đó ta được a.i điểm, hãy tìm số điểm lớn nhất có thể đạt được  
+INP1:	2
+	1 2  		(Bằng cách lấy phần tử 2 ta xóa phần tử có giá trị 1 và 3(ko có trong mảng) khi đó ta được 2 điểm)
+OUT1:	2
+
+INP2:	6
+	1 2 2 3 2 2
+OUT2:	8		(Bằng cách  lấy phần tử có giá trị 2, khi đó ko còn phần tử 1 và 3 trong mảng, và khi đó mảng còn (2, 2, 2) khi đó lấy tiếp 3 lần 2 ta sẽ được 8 điểm tổng cộng)
+
+
+INP3:	3
+	1 2 3
+OUT3:	4
+
+[LinkToSubmit](https://codeforces.com/problemset/problem/455/A)
+
+
+
+
+
+
+[Tags] Sort, DP
+[Solution] ta đặt s là số lớn nhất trong a.i với mọi 1 <= i <= n.
+ta duyệt từ 1 đến s, mảng f.i lưu giá trị điểm lớn nhất có thể có được từ 1 đến i(ko phải a[i]). 
+Công thức f.i = max(f.(i-1), f.(i-2) + a.i*(số phần tử có giá trị i));
+[Code]:
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+const int N = 1e5+5;
+int n;
+ll a[N], dp[N] = {0}, maxx = 0;
+map<int,ll> m;
+int main(){
+    //ios_base::sync_with_stdio(0), cin.tie(0);
+    cin>>n;
+    for(int i = 1; i<=n; i++){
+        cin>>a[i];
+        m[a[i]]++;
+        maxx = max(maxx,1ll*a[i]);
+    }
+    dp[1] = m[1];
+    for(ll i = 2; i<=maxx; i++){
+        dp[i] = max(dp[i-1],dp[i-2]+ 1ll*i*m[i]);
+    }
+    cout<<dp[maxx];
+    return 0;
+}
+ 

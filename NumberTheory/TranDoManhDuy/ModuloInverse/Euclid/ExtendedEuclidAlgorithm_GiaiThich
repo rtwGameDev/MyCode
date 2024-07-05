@@ -1,0 +1,47 @@
+Giải thích thuật toán Euclid mở rộng
+
+Ngoài việc tìm ước số chung lớn nhất (gcd) của 2 số a và b, nhiều khi ta còn phải 
+biết các hệ số thể hiện gcd qua a và b, tức là phải tìm x và y thỏa mãn
+
+Với gcd(a, b) = x*a + y*b 
+cặp số (x, y) là cặp hệ số của (a, b)
+<---------------------------------------------------------------------------->
+#include <iostream>
+#define ll long long 
+using namespace std;
+
+ll exEuclid(ll a, ll b, ll &x, ll &y) {
+	if (b == 0) {
+		x = 1;
+		y = 0;
+		return a;
+	}
+	ll x1, y1;
+	ll rs = exEuclid(b, a % b, x1, y1);
+	x = y1;
+	y = x1 - (a / b) * y1;
+	return rs;
+}
+
+int main() {
+	ll a, b, x, y;
+	cin >> a >> b;
+	cout << exEuclid(a, b, x, y);
+	cout << endl << x << " " << y;
+	return 0;
+}
+<---------------------------------------------------------------------------->
+Giả sử ta có cặp hệ số của (b, a%b) là (x1, y1) => Ta cần tìm cặp hệ số của (a, b) là (x, y)
+ta có gcd = (b) * x1 + (a % b) * y1  (*)
+mà a % b = a - (a / b) * b với a / b giữa 2 kiểu số nguyên sẽ trả về phần nguyên 
+vd 12 % 5 = 12 - (12/5)
+thế vào (*)
+gcd = b * x1 + (a - (a/b) * b)* y1
+gcd = b * x1 + a*y1 - y1(a/b)*b
+gcd = a*y1 + b*(x1 - y1(a/b)*b 
+
+=> cặp số (x, y) biểu diễn theo (x1, y1) se là 
+x = y1
+y = x1 - y1(a/b)
+
+

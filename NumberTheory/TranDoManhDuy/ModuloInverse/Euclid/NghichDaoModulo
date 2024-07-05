@@ -1,0 +1,24 @@
+<-------------------------------------------------------------------------------------------------------------------------------------------------->
+giả sử ta có a, m là 2 số nguyên tố cùng nhau
+ta có tính chất:
+ a^(phi(m)) = 1 (mod m) (1)
+phi(m) là phi hàm euler
+a.x = 1 (mod m) (2)
+x là nghịch đảo của a theo m
+Vậy từ (1) và (2) ta suy ra.
+x = a^(phi(m) - 1) 
+trường hợp m là số nguyên tố thì phi(m) = m - 1
+<-------------------------------------------------------------------------------------------------------------------------------------------------->
+Tìm các nghịch đảo theo modun nguyên tố
+giả sử cho số nto m và nhiệm vụ của ta là tính các modulo các số từ [1, m - 1] với modulo m
+thì r[1] = 1
+    ta có 
+m % i = m - (m/i) * i
+modulo m 2 vế:
+m % i = m - (m/i) * i (mod m)
+Nhân cả 2 vế với nghịch đảo của i là r[i], với nghịch đảo của r[m%i] 
+ta được r[i] = (m - (m/i) * r[m%i] % m ) % m
+=> Code
+	for (ll i = 2; i < m; ++i) {
+		r[i] = (m - (m / i) * r[m % i] % m ) % m;
+	}
